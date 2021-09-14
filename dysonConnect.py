@@ -63,8 +63,7 @@ class DysonConnect(OhMQTTbridge):
             for topic in subscribeTopics:
                 topic[0] = self.DeviceName + str(topic[0])
 
-            self.subscribeTopics = True
-            self.client.subscribe(subscribeTopics)
+            self.topicSubscriber(subscribeTopics)
 
     def set_command_data(self, command, command_topic, data=""):
         commmon_Command_struct = {
